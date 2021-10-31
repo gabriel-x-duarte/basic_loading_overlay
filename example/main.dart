@@ -1,25 +1,3 @@
-<!-- 
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
-
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages). 
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages). 
--->
-
-A basic loading overlay
-
-## Features
-
-Creates a new scope where the user cannot leave until you programmatically pop it.
-
-## Usage
-
-```dart
 import 'package:flutter/material.dart';
 
 import 'package:basic_loading_overlay/basic_loading_overlay.dart';
@@ -115,8 +93,3 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-```
-
-## Additional information
-
-If you like this package and find it usefull, please give it a like.
