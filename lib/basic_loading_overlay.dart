@@ -2,7 +2,7 @@ library basic_loading_overlay;
 
 import 'package:flutter/material.dart';
 
-/// A loading overlays.
+/// A loading overlay.
 
 class BasicLoadingOverlay extends StatelessWidget {
   const BasicLoadingOverlay({
