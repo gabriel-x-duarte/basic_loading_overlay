@@ -16,11 +16,14 @@ class BasicLoadingOverlay extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Dialog(
-      backgroundColor: backgroundColor,
-      child: Center(
-        child: CircularProgressIndicator(
-          color: loadingIndicatorColor,
+    return WillPopScope(
+      onWillPop: () async => false,
+      child: Dialog(
+        backgroundColor: backgroundColor,
+        child: Center(
+          child: CircularProgressIndicator(
+            color: loadingIndicatorColor,
+          ),
         ),
       ),
     );
