@@ -53,7 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               const Text(
-                'Everytime you push the button a loading overlay will appear for N seconds, where N is how many times you hebe pressed the button',
+                'Everytime you push the button a loading overlay will appear for N seconds, where N is how many times you have pressed the button',
               ),
               const SizedBox(
                 height: 15,

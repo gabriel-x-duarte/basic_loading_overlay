@@ -1,3 +1,3 @@
-## 0.0.3
+## 0.0.4
 
-Including Example
+Removing option for backgroundColor and including a size option
