@@ -1,7 +1,7 @@
 name: basic_loading_overlay
-description: A new Flutter package project.
-version: 0.0.4
-homepage: https://github.com/gabriel-x-duarte
+description: A basic loading overlay that creates a new scope where the user cannot leave until you programmatically pop it.
+version: 1.0.0
+homepage: https://github.com/gabriel-x-duarte/basic_loading_overlay
 
 environment:
   sdk: ">=2.12.0 <3.0.0"

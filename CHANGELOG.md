@@ -1,3 +1,3 @@
-## 0.0.4
+## 1.0.0
 
-Removing option for backgroundColor and including a size option
+Adding description to pubspec as convention requires
