@@ -1,3 +1,7 @@
+## 1.0.2
+
+Updating Flutter SDK version
+
 ## 1.0.1
 
 Updating Dart SDK version
