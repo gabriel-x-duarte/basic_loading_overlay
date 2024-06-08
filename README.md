@@ -29,7 +29,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   // This widget is the root of your application.
   @override
@@ -45,7 +45,10 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
+  const MyHomePage({
+    super.key,
+    required this.title,
+  });
 
   final String title;
 
@@ -85,7 +88,10 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               Text(
                 '$_counter',
-                style: Theme.of(context).textTheme.headline4,
+                style: const TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.w600,
+                ),
               ),
             ],
           ),
@@ -99,7 +105,7 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  Future _showOverlay() async {
+  Future<void> _showOverlay() async {
     _incrementCounter();
 
     Future.delayed(
@@ -107,14 +113,12 @@ class _MyHomePageState extends State<MyHomePage> {
       () => Navigator.of(context).pop(),
     );
 
-    return showDialog(
+    LoadingOverlay.show(
       context: context,
-      builder: (context) {
-        return const BasicLoadingOverlay();
-      },
     );
   }
 }
+
 ```
 
 ## Additional information
