@@ -1,3 +1,8 @@
+## 2.0.1
+
+* DOCS: added a private constructor to prevent the implicit public constructor from being exposed in generated documentation.
+* DOCS: improved public API documentation coverage reported by pub.dev.
+
 ## 2.0.0
 
 * BREAKING: made `BasicLoadingOverlay` private and removed it from the public API. `LoadingOverlay.show()` is now the only supported public API.
