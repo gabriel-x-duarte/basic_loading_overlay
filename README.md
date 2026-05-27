@@ -1,126 +1,39 @@
-<!-- 
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
-
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages). 
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages). 
--->
-
-A basic loading overlay
+A basic modal loading overlay for Flutter applications.
 
 ## Features
 
-Creates a new scope where the user cannot leave until you programmatically pop it.
+- Displays a modal loading overlay.
+- Prevents user interaction while visible.
+- Prevents back navigation while visible.
+- Customizable loading indicator color.
+- Customizable loading indicator size.
+- Customizable loading indicator stroke width.
 
 ## Usage
 
+#### Show the loading overlay
 ```dart
-import 'package:flutter/material.dart';
+LoadingOverlay.show(
+  context: context,
+);
+```
 
-import 'package:basic_loading_overlay/basic_loading_overlay.dart';
+#### Customize the loading indicator
+```dart
+LoadingOverlay.show(
+  context: context,
+  loadingIndicatorColor: Colors.redAccent,
+  size: 50,
+  strokeWidth: 6,
+);
+```
 
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Basic Loading Overlay',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({
-    super.key,
-    required this.title,
-  });
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(10.0),
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              const Text(
-                'Everytime you push the button a loading overlay will appear for N seconds, where N is how many times you have pressed the button',
-              ),
-              const SizedBox(
-                height: 15,
-              ),
-              const Text(
-                'You have pushed the button this many times:',
-              ),
-              Text(
-                '$_counter',
-                style: const TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _showOverlay,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
-    );
-  }
-
-  Future<void> _showOverlay() async {
-    _incrementCounter();
-
-    Future.delayed(
-      Duration(seconds: _counter),
-      () => Navigator.of(context).pop(),
-    );
-
-    LoadingOverlay.show(
-      context: context,
-    );
-  }
-}
-
+#### Dismiss the loading overlay
+```dart
+Navigator.of(context).pop();
 ```
 
 ## Additional information
 
-If you like this package and find it usefull, please give it a like.
+If you find this package useful,
+please consider giving it a like.

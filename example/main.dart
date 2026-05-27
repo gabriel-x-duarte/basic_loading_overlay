@@ -9,15 +9,16 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Basic Loading Overlay',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        colorSchemeSeed: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(
+        title: 'Basic Loading Overlay',
+      ),
     );
   }
 }
@@ -37,12 +38,6 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,19 +45,22 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(10),
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
+            children: [
               const Text(
-                'Everytime you push the button a loading overlay will appear for N seconds, where N is how many times you have pressed the button',
+                'Press the button to display a loading overlay. '
+                'The overlay will remain visible for the same number '
+                'of seconds as the button press count.',
+                textAlign: TextAlign.center,
               ),
               const SizedBox(
                 height: 15,
               ),
               const Text(
-                'You have pushed the button this many times:',
+                'You have pressed the button this many times:',
               ),
               Text(
                 '$_counter',
@@ -77,10 +75,16 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _showOverlay,
-        tooltip: 'Increment',
+        tooltip: 'Increment counter and show loading overlay',
         child: const Icon(Icons.add),
       ),
     );
+  }
+
+  void _incrementCounter() {
+    setState(() {
+      _counter++;
+    });
   }
 
   Future<void> _showOverlay() async {
@@ -88,7 +92,13 @@ class _MyHomePageState extends State<MyHomePage> {
 
     Future.delayed(
       Duration(seconds: _counter),
-      () => Navigator.of(context).pop(),
+      () {
+        if (!mounted) {
+          return;
+        }
+
+        Navigator.of(context).pop();
+      },
     );
 
     LoadingOverlay.show(
