@@ -1,3 +1,7 @@
+/// A basic modal loading overlay for Flutter applications.
+
+library;
+
 import 'package:flutter/material.dart';
 
 const Color _kDefaultColor = Colors.deepOrangeAccent;
@@ -22,8 +26,6 @@ const double _kDefaultStrokeWidth = 4;
 /// Navigator.of(context).pop();
 /// ```
 abstract final class LoadingOverlay {
-  const LoadingOverlay._();
-
   /// Displays a modal loading overlay.
   ///
   /// The overlay prevents user interaction and blocks back navigation

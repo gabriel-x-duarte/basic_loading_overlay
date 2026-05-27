@@ -1,3 +1,7 @@
+## 2.0.2
+
+* DOCS: added library-level documentation to improve pub.dev documentation coverage.
+
 ## 2.0.1
 
 * DOCS: added a private constructor to prevent the implicit public constructor from being exposed in generated documentation.

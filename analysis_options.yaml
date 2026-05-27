@@ -21,6 +21,9 @@ linter:
   # `// ignore_for_file: name_of_lint` syntax on the line or in the file
   # producing the lint.
   rules:
+    # Require documentation comments for all public members
+    public_member_api_docs: true
+
     # Require const for constant-valued declarations
     prefer_const_declarations: true
 
