@@ -1,3 +1,7 @@
+## 2.0.3
+
+* CHORE: align SDK constraints with Dart 3 and Flutter 3.10 compatibility
+
 ## 2.0.2
 
 * DOCS: added library-level documentation to improve pub.dev documentation coverage.

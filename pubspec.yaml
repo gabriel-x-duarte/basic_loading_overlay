@@ -1,11 +1,11 @@
 name: basic_loading_overlay
 description: A basic modal loading overlay that blocks navigation and user interaction until programmatically dismissed.
-version: 2.0.2
+version: 2.0.3
 homepage: https://github.com/gabriel-x-duarte/basic_loading_overlay
 
 environment:
-  sdk: ">=3.0.1 <4.0.0"
-  flutter: ">=3.7.0"
+  sdk: ">=3.0.0 <4.0.0"
+  flutter: ">=3.10.0"
 
 dependencies:
   flutter:
